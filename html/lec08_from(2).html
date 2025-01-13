@@ -21,5 +21,71 @@
     <input type="month" min="2025-10">
     <br>
     <input type="time" value="16:10">
+    <br>
+    <!-- checkbox : name이 같은 여러개 값 선택 -->
+    <input type="checkbox" value="1" id="jja" name="lunch">
+    <label for="jja">짜장면</label>
+    <input type="checkbox" value="2" id="bok" name="lunch">
+    <label for="bok">볶음밥</label><br>
+    <!-- radio : name이 같은 것중에 하나만 -->
+    <input type="radio" value="1" id="seoul" name="addr">
+    <label for="seoul">서울</label>
+    <input type="radio" value="2" id="dae" name="addr">
+    <label for="dae">대전</label>
+    <br>
+    <select name="user_select" id="user_select">
+        <option value="0">선택하기</option>
+        <option value="1">다이제</option>
+        <option value="2">콘치</option>
+    </select>
+    <br>
+    <progress max="100" value="7"></progress>
+    <br>
+    <form method="get" name="testFrm" action="#">
+        <input type="text" required>
+        <button type="button"
+        onclick="alert('안녕');">버튼</button>
+        <button type="submit">제출</button>
+        <button type="reset">테스트</button>
+    </form>
+    <!-- 피자 주문하기 -->
+    <h2>피자 주문하기</h2>
+    <form>
+        <fieldset>
+            <legend>고객정보</legend>
+            <label for="name">고객명 :</label>
+            <input type="text" id="name" name="name"><br>
+            <label for="phone">전화번호 :</label>
+            <input type="text" id="phone" name="phone"><br>
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email">
+        </fieldset>
+        <fieldset>
+            <legend>피자 사이즈</legend>
+            <input type="radio" value="1" id="smail" name="pizza">
+            <label for="smail">Smail</label><br>
+            <input type="radio" value="2" id="medium" name="pizza">
+            <label for="medium">Medium</label><br>
+            <input type="radio" value="3" id="large" name="pizza">
+            <label for="large">Large</label>
+        </fieldset>
+        <fieldset>
+            <legend>토핑 선택</legend>
+            <input type="checkbox"  value="1" id="su" name="tp">
+            <label for="su">새우</label><br>
+            <input type="checkbox"  value="2" id="go" name="tp">
+            <label for="go">고구마</label><br>
+            <input type="checkbox"  value="3" id="ja" name="tp">
+            <label for="ja">감자</label><br>
+            <input type="checkbox"  value="4" id="pi" name="tp">
+            <label for="pi">파인애플</label>
+        
+        </fieldset><br>
+        <label>희망 배송 시간 : </label>
+        <input type="time"><br>
+        <br>
+        <button type="button"
+        onclick="alert('주문완료!');">주문하기</button>
+    </form>
 </body>
 </html>
