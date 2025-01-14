@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응 선택자</title>
+</head>
+<body>
+    <style>
+        #p1:active{
+            background-color: mediumseagreen;
+        }
+        #p2{color: yellow;}
+        #p2:hover{
+            color: hotpink;
+        }
+    </style>
+    <div id="reaction">
+        <p id="p1">클릭 -> 배경색</p>
+        <p id="p2">마우스 올리면 -> 글자색</p>
+    </div>
+    <!-- 문제 -->
+    <style>
+        #bt1:hover{
+            background-color: aquamarine;
+        }
+        #bt2:active{
+            background-color: crimson;
+        }
+    </style>
+    <div >
+        <input type="button" value="1번버튼" id="bt1"><br>
+        <button type="button" id="bt2">2번 버튼</button>
+    </div>
+    <br>
+    <style>
+        input[name="user_id"]:focus{
+            background-color: rgb(165, 165, 217);
+        }
+        input[type="text"]:disabled{
+            background-color: crimson;
+        }
+    </style>
+    <div id="condition">
+        <input type="text" name="user_id">
+        <input type="text" name="user_name" disabled>
+    </div>
+</body>
+</html>
