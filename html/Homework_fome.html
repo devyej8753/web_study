@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homework_form</title>
+</head>
+<body>
+    <!-- 1. 납품 대장 -->
+    <h2>납품 대장</h2>
+    <form>
+        <fieldset>
+            <legend>납품자 정보</legend>
+            <label for="name">1.납품자 명 :</label>
+            <input type="text" id="name" name="str"
+            placeholder="name"><br>
+            <label for="email">2. email</label>
+            <input type="email" id="email" name="str"
+            placeholder="hkd@naver.com">
+        </fieldset>
+        <fieldset>
+            <legend>납품 정보</legend>
+            <ul>
+                <li>
+                    <label for="name1">상품명 :</label>
+                    <input type="text" id="name1" name="su">
+                </li>
+                <li>
+                    <label for="total">납품수량 :</label>
+                    <input type="text" name="su" id="total">
+                </li>
+                <li>
+                    <label for="num">납품등급</label>
+                    <input type="range" min="2" max="10" step="1">
+                </li>
+                <li>
+                    <label for="avg">기타사항 :</label>
+                    <textarea cols="20" rows="2"></textarea>
+                </li>
+            </ul>
+        </fieldset>
+        <button type="button">send message</button>
+    </form>
+    <!-- 2. 회원가입 -->
+    <form>
+        <fieldset>
+            <legend>필수 입력 사항</legend>
+            <p>
+                <strong>
+                    <label for="id2">ID</label>
+                    <input type="text" name="signup" id="id2"
+                    placeholder="아이디 10글자 이내">
+                </strong>
+            </p>
+        </fieldset>
+    </form>
+
+</body>
+</html>
