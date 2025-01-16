@@ -14,22 +14,40 @@
     </label><br>
     <br>
     <label for="product_name">
-        상품명 :
-        <input type="text" id="product_name" 
+        상품명 : <input type="text" id="product_name" name="pn" 
         placeholder="구매 상품명을 입력하세요.">
     </label><br>
     <br>
     <label for="pc">
         가격 :
-        <input type="text" name="price" id="pc" 
+        <input type="number" name="price" id="pc" 
         placeholder="구매 가격을 입력하세요.">
     </label><br>
     <br>
-    <input type="button" value="입력값 출력하기"><br>
+    <input id="test" type="button" value="입력값 출력하기" onclick="selectAll();"><br>
     <br>
-    <div id="test" style="width: 300px; height: 150px; background-color: bisque;" >
+    <div id="sel" style="width: 300px; height: 150px; background-color: bisque;" >
         <div></div>
     </div>
+    <script>
+        function selectAll(){
+            var sn = document.getElementsByTagName('input')[0].value;
+            var sp = document.getElementById('product_name').value;
+            var sc = document.getElementsByName('price')[0].value;
+
+            document.getElementById('sel').innerHTML = '구매자 : '+sn +'<br>'
+            + '상품명 : '+sp +'<br>'
+            +'가격 : '+sc + '원';
+            
+            console.log('구매자 : '+sn);
+            console.log('상품명 : '+sp);
+            console.log('가격 : '+sc);
+
+
+        }
+    </script>
+
+
 
 </body>
 </html>
