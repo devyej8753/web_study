@@ -90,7 +90,118 @@
             }
         }
     </script>
+    <h2>5. 선택자 기준 접근</h2>
+    <button type="button" onclick="practiceQuery();">
+        접근하기
+    </button>
+    <script>
+        function practiceQuery(){
+            var one = document.querySelector('#idTarget');
+            // document.getElementById('idTarget');
+            one.style.color ='orange';
+            var many = document.querySelectorAll('.b');
+            many[0].style.color='red';
+        }
+    </script>
+    <h2>6. value 속성 사용하기</h2>
+    <input type="text" id="userName">
+    <input type="button" value="가져오기" id="getNameBtn">
+    <input type="button" value="바꿔주기" id="setNameBtn">
+    <script>
+        document.getElementById('getNameBtn').onclick = function(){
+            var userName = document.getElementById('userName').value;
+            alert(userName);
+        }
+        document.getElementById('setNameBtn').onclick = function(){
+            document.getElementById('userName').value = '김철수';
+            // document.getElementById('userName').value += '김철수';
+        }
+    </script>
+    <h2>style 속성 활용하기</h2>
+    <style>
+        #styleBtn{
+            background-color: cornflowerblue;
+        }
+    </style>
+    <input id="styleBtn" type="button" 
+    value="스타일 변신" onclick="chengeStyle();">
+    <script>
+        function chengeStyle(){
+            // console.log('함수 연결 확인');
+            var st1 = document.getElementById('styleBtn').style.backgroundColor;
+            console.log(st1);
 
+            var ele2 = document.getElementById('styleBtn');
+            var st2 = getComputedStyle(ele2).backgroundColor;
+            console.log(st2);
+
+            ele2.style.backgroundColor = 'gold';
+        }
+    </script>
+    <h2>문제 1. 색상 선택후 변경 버튼을 클릭하면 색상이 변경되도록 만들어보세요.</h2>
+    <style>
+        .container{
+            background-color: black;
+            width: 100px; height: 100px;
+            margin: 10px;
+        }
+    </style>
+    <input id="col" type="color">
+    <input type="button" value="변경" onclick="chengeColor();">
+    <div class="container" id="box">
+        <div></div>
+    </div>
+    <script>
+        function chengeColor(){
+            var ch1 = document.getElementById('col').value;
+            var su = getComputedStyle(box).backgroundColor;
+            console.log(su);
+            
+            document.getElementById('box').style.backgroundColor = ch1;
+        }
+    </script>
+    <h2>문제 2. 버튼에 따른 크기 조절이 가능하도록 만들어 보시오.</h2>
+    <input id="50" type="button" value="50x50">
+    <input id="100" type="button" value="100x100" >
+    <input id="200" type="button" value="200x200" >
+    <div class="container" id="boxtotle" style="width: 100px; height: 100px;">
+        <div id="item"></div>
+    </div>
+    <script>
+        document.getElementById('50').onclick=function(){
+            var bx = document.getElementById('boxtotle');
+            bx.style.width='50px';
+            bx.style.height='50px';
+        }
+        document.getElementById('100').onclick=function(){
+            var bx = document.getElementById('boxtotle');
+            bx.style.width='100px';
+            bx.style.height='100px';
+        }
+        document.getElementById('200').onclick=function(){
+            var bx = document.getElementById('boxtotle');
+            bx.style.width='200px';
+            bx.style.height='200px';
+        }
+    </script>
+    <h2>7. innerHTML</h2>
+    <div id="test1">
+        <p>Hello!</p>
+    </div>
+    <div id="test2">안녕하세요~</div>
+    <input type="button" value="가져오기" onclick="getTag();">
+    <input type="button" value="바꿔주기" onclick="setTag();">
+    <script>
+        function setTag(){
+            document.getElementById('test1').innerHTML += 'Lorem dolor sit amet';
+        }
+        function getTag(){
+            var s = document.getElementById('test1').innerHTML;
+            var t2 = document.getElementById('test2').innerHTML;
+            console.log(t1);
+            console.log(t2);
+        }
+    </script>
 
     <br><br><br><br><br><br><br><br><br><br><br><br>
 </body>
