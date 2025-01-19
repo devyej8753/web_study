@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수 과제</title>
+</head>
+<body>
+    <h1>자라나라 스폰지밥</h1>
+    <button type="button" onclick="pls();">+</button><br>
+    <img id="pl" src="../resources/sponge.png" style="width: 100px; height: 100px;">
+    <script>
+        function pls(){
+            let spo = document.getElementById('pl');
+            
+            let currentWidth = parseInt(spo.style.width); 
+            let currentHeight = parseInt(spo.style.height); 
+            
+            spo.style.width = (currentWidth + 100) + 'px';
+            spo.style.height = (currentHeight + 100) + 'px'
+            
+        }
+    </script>
+</body>
+</html>
