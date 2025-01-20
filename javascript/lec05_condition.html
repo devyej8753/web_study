@@ -208,7 +208,39 @@
 
 
     </script>
+    <h1>Homework</h1>
+    <h2>날씨 확인</h2>
+    <label>계절</label>
+    <input type="radio" name="season" id="spring" value="1">
+    <label>봄</label>
+    <input type="radio" name="season" id="summer" value="2">
+    <label>여름</label>
+    <input type="radio" name="season" id="autumn" value="3">
+    <label>가을</label>
+    <input type="radio" name="season" id="winter" value="4">
+    <label>겨울</label><br>
+    <label for="temperature">기온</label>
+    <input type="text" id="temperature"><br>
+    <button onclick="seasonAll();">확인</button>
+    <script>
+        function seasonAll(){
+            let sp = document.getElementsByName('season')[0].checked;
+            let sm = document.getElementsByName('season')[1].checked;
+            let at = document.getElementsByName('season')[2].checked;
+            let wt = document.getElementsByName('season')[3].checked;
+            // let arr = document.getElementById('season');
+            let mm = document.getElementById('temperature').value;
+            if(sm == true){
+                if(mm >= 35) alert('폭염경보');
+                if(mm >= 33) alert('폭염주의보');
+            }else if(wt == true){
+                if(mm <= -15) alert('한파경보');
+                if(mm <= -12) alert('한파주의보');
+                
+            }
 
+        }
+    </script>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </body>
 </html>
