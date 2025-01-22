@@ -37,7 +37,7 @@
     </script>
     <h1>키오스크</h1>
     <label for="pri">할인 전 :</label>
-    <input type="number" id="pri">
+    <input type="number" id="pri"><br>
     <input type="radio" name="discount" id="5" onchange="calcPrice();">
     <label for="5">기본할인(5%)</label><br>
     <input type="radio" name="discount" id="10" onchange="calcPrice(10);">
@@ -51,5 +51,135 @@
         document.getElementById('p').value = pc;
     }
     </script>
+    <h1>가변인자 함수</h1>
+    <input type="button" value="실행확인" onclick="sumNum(1,2,3,4);">
+    <script>
+        function sumNum(){
+            // console.log(arguments[0]);
+            let result = 0;
+            for(let i = 0 ; i <arguments.length ;  i++){
+                result += arguments[i];
+            }
+            console.log(result);
+        }
+    </script>
+    <h1>반환값</h1>
+    <button onclick="alert(calcDay());">오늘 날짜</button>
+    <script>
+        function calcDay(){
+            const date = new Date();
+            const year = date.getFullYear();
+            return `오늘은 ${year}년 입니다.`;
+        }
+        
+    </script>
+    <h1>선언적 함수</h1>
+    <button onclick="basicFunc();">테스트</button>
+    <script>
+        function basicFunc(){
+            alert('선언1');
+        }
+
+        function basicFunc(){
+            alert('선언2');
+        }
+    </script>
+    <h1>익명함수</h1>
+    <button onclick="annonyFunc();">익명테스또</button>
+    <script>
+        let annonyFunc = function(){
+            alert('익명함수~멘트 받았습니다.')
+        }
+        // let annonyFunc = function(){
+            
+        // }
+    </script>
+    <h1>화살표 함수</h1>
+    <script>
+        // 1. 매개변수가 없을때
+        const arrow1 = () =>{
+            console.log('화살표 함수 1번')
+            return 1+2;
+        }
+        // 2. 매개변수가 있을때
+        const arrow2 = (num1,num2) =>{
+            console.log('2번')
+            return num1+num2;
+        }
+        // 3. 반환값이 간단할때(1줄)
+        const arrow3 = (str,s) => str.indexOf(s);
+        // 4. 매개변수가 한개일때
+        const arrow4 = str => str.length;
+    </script>
+    <h1>문제</h1>
+    <button onclick="console.log(cal1(11,41));">선언적 함수</button>
+    <button onclick="console.log(cal2(11,41));">익명 함수</button>
+    <button onclick="console.log(cal3(11,41));">화살표 함수</button>
+    <script>
+        function cal1(a,b){
+            return(a*b);
+        }
+            let cal2 = function(a,b){
+            return(a*b);
+        }
+            const cal3 = (a,b) => a*b;
+    </script>
+    <h1>익명함수 활용</h1>
+    <button onclick="timerFunc();">1초 뒤에 동작</button>
+    <script>
+        let timerFunc = function(){
+            // setTimeout(기능, 시간);
+            setTimeout(function(){
+                console.log('1초 지나부려쓰~');
+            },1000);
+        }
+    </script>
+    <button onclick="returnFunc('바깥쪽')('테스트');">반환값 테스트</button>
+    <script>
+        const returnFunc = function(str){
+            const innerFunc = msg =>{
+                console.log(str+" : "+msg);
+            }
+            return innerFunc;
+        }
+    </script>
+    <div id="instant_div">
+        즉시 실행 함수 테스트
+    </div>
+    <script>
+        (function(){
+            document.getElementById('instant_div').innerHTML = '<h1>확인</h1>';
+        })();
+    </script><br>
+<h1>homework</h1>
+<h2>1. 둥글둥글 테두리</h2>
+<style>
+    #시루{
+        width: 150px; 
+        height: 150px;
+        border: 4px dotted green;
+        border-radius: 40px;
+    }
+</style>
+<img src="../resources/시루.jpg" id="시루"><br>
+<div id="continue">
+    <input id="jig" type="range" onchange="radiusAdd();" min="0" max="75" step="5" value="40">
+    <label id="siz">40</label>
+</div>
+<script>
+    const jg = document.getElementById('jig');
+    const sz = document.getElementById('siz');
+    const ct = document.getElementById('시루');
+    let radiusAdd = function(round){
+        ct.style.borderRadius = `${round}px`;
+        sz.textContent = round;
+    }
+    jg.addEventListener('input', (eve) => {
+            radiusAdd(eve.target.value);
+    });
+</script>
+<h2>2. 선택 검색하기</h2>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </body>
 </html>
