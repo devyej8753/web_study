@@ -168,20 +168,77 @@
         })
     </script>
     <h2>출석부</h2>
-    <button id="st">출력</button>
-    <table></table>
+    <button id="btn">출력</button>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>나이</th>
+                <th>주소</th>
+            </tr>
+        </thead>
+        <tbody id="student">
+
+        </tbody>
+    </table>
     <script>
-        $(function(){
-            $('#st').on('click',function(){
             const arr = [
                 {name:'김철수',age : 20,address:'서울'},
                 {name:'이영희',age:30,address:'부산'},
                 {name:'최철수',age:40,address:'광주'}
             ];
-            
-
+            $('#btn').on('click',function(){
+                const tbody = $('#student');
+                tbody.empty();
+                $.each(arr,function(index,value){
+                    const row = `<tr>
+                                <td>${value.name}</td>
+                                <td>${value.age}</td>
+                                <td>${value.address}</td>
+                            </tr>`;
+                tbody.append(row);
+                })
             })
-            
+    </script>
+    <h2>과일 가게 할인</h2>
+    <ul id="product">
+        
+    </ul>
+    <button id="cnt_btn"><할인적용></button>
+    <script>
+        const products = {
+            "사과": 3000,
+            "바나나": 2000,
+            "체리": 8000,
+            "포도": 7000,
+            "수박": 5000
+        };
+        function displayProducts(productData){
+            const productList = $('#product');
+            productList.empty();
+
+            $.each(productData,function(name,price){
+                productList.append(`<li>${name}: ${price}원</li>`);
+            })
+        }
+
+        $(document).ready(function() {
+            displayProducts(products);
+        });
+
+        $('#cnt_btn').click(function(){
+            const discnt = {};
+
+            $.each(products,function(name,price){
+                let pri = price;
+                if(price >= 7000){
+                    pri = price * 0.8;
+                }else if(price >= 5000){
+                    pri = price * 0.9;
+                }
+                discnt[name] = Math.round(pri);
+            })
+            displayProducts(discnt);
         })
     </script>
 </body>
