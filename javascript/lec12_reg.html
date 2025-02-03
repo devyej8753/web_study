@@ -107,7 +107,6 @@
     <script>
         const Phone =function(){
             let pho = document.getElementById('phone').value;
-            console.log(pho)
             let reg = /^01([0-1]|[6-9])-([0-9]{3}|[0-9]{4})-[0-9]{4}$/;
             if(reg.test(pho)){
                 alert('정상입력');
