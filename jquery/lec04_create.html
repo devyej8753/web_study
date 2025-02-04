@@ -169,6 +169,57 @@
             })
         })
     </script>
+    <h1>요소 생성 과제</h1>
+    <h2>1. 10개까지 추가</h2>
+    <button id="btn">추가</button>
+    <div id="Div">
+        <input type="txt">
+    </div>
+    <script>
+        $(function(){
+            $('#btn').click(function(){
+                let su = $('#Div>:first').clone();
+                $('#Div').append(su);
+                if($('#Div >input').length > 10){
+                    alert('10개까지만 추가할 수 있습니다')
+                }
+            })
+        })
+    </script>
+    <h2>2. 게시판에 글쓰기</h2>
+    <h1>글쓰기</h1>
+    <input type="radio" name="title" value="1">
+    <label>제목1</label><br>
+    <input type="radio" name="title" value="2">
+    <label>제목2</label><br>
+    <input type="radio" name="title" value="3">
+    <label>제목3</label><br>
+    <input type="radio" name="title" value="4">
+    <label>문단</label><br>
+    <label for="content">내용</label>
+    <input type="text" id="content">
+    <div id="sibal"></div>
+    <script>
+        $(function(){
+            $('#content').keyup(function(event){
+                let str = $('#content').val();
+                if(event.key == 'Enter'){
+                    let num = $('input[name="title"]:checked').val();
+                    if(num == 1){
+                        $('#sibal').append(`<h1>${str}</h1>`);
+                    }else if(num == 2){
+                        $('#sibal').append(`<h2>${str}</h2>`);
+                    }else if(num == 3){
+                        $('#sibal').append(`<h3>${str}</h3>`);
+                    }else if(num == 4){
+                        $('#sibal').append(`<p>${str}</p>`);
+                    }else{
+                        alert('타입을 선택해주세요');
+                    }
+                }
 
+            })
+        })
+    </script>
 </body>
 </html>
