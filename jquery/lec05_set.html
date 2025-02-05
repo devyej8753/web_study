@@ -169,5 +169,37 @@
             })
         })
     </script>
+    <style>
+        .spg{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+    <h1>늘어나는 이미지</h1>
+    <button id="wdt">가로</button>
+    <button id="lng">세로</button>
+    <button id="stop">멈추기</button><br>
+    <img src="../resources/sponge.png" class="spg">
+    <script>
+        let inter1;
+        let inter2;
+        let num = 100;
+        $(function(){
+            $('#wdt').click(function(){
+                inter1 = setInterval(function(){
+                    $('.spg').width(num+=10);
+                },1000);          
+            })
+            $('#lng').click(function(){
+                inter2 = setInterval(function(){
+                    $('.spg').height(num+=10);
+                },1000)
+            })
+            $('#stop').click(function(){
+                clearInterval(inter1);
+                clearInterval(inter2);
+            })
+        })
+    </script>
 </body>
 </html>
